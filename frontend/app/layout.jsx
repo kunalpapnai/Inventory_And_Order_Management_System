@@ -1,6 +1,5 @@
 import './globals.css';
-import { AuthProvider } from '../context/AuthContext';
-import { ToastProvider } from '../components/ui/Toast';
+import { Providers } from './providers';
 
 export const metadata = {
   title: 'StockFlow - Inventory & Order Management System',
@@ -11,11 +10,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="min-h-screen bg-slate-50 text-slate-900 antialiased">
-        <AuthProvider>
-          <ToastProvider>
-            {children}
-          </ToastProvider>
-        </AuthProvider>
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );

@@ -1,9 +1,8 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import { authService } from '../services/auth.service';
-import { setAuthData, getToken, getStoredUser, clearAuthData } from '../utils/auth';
+import { authService } from '@/services/auth.service';
+import { setAuthData, getToken, getStoredUser, clearAuthData } from '@/utils/auth';
 
 const AuthContext = createContext(null);
 
@@ -11,7 +10,6 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const router = useRouter();
 
   useEffect(() => {
     const initializeAuth = async () => {
@@ -22,7 +20,7 @@ export const AuthProvider = ({ children }) => {
         setToken(storedToken);
         setUser(storedUser);
 
-        // Optionally verify with server
+        // Verify with server
         try {
           const res = await authService.getMe();
           if (res.data && res.data.user) {
@@ -80,7 +78,9 @@ export const AuthProvider = ({ children }) => {
     clearAuthData();
     setUser(null);
     setToken(null);
-    router.push('/login');
+    if (typeof window !== 'undefined') {
+      window.location.href = '/login';
+    }
   };
 
   return (
