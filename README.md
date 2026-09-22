@@ -7,10 +7,35 @@ A production-ready full-stack SaaS application for small business inventory cont
 ## Documentation Index
 
 - 📋 **Setup & Quick Start**: [Setup Steps](#quick-start)
+- 🖼️ **Application Screenshots**: [Visual Showcase](#application-screenshots)
 - ⚙️ **Environment Variables Template**: [.env.example](.env.example)
 - 🗄️ **Database Model Documentation**: [docs/DATABASE_MODELS.md](docs/DATABASE_MODELS.md)
 - 📡 **REST API Reference**: [docs/API_DOCUMENTATION.md](docs/API_DOCUMENTATION.md)
 - 🧪 **Postman / Thunder Client Collection**: [postman_collection.json](postman_collection.json)
+
+---
+
+## Application Screenshots
+
+### 1. Authentication & Role Selection
+Clean authentication portal featuring plain React state validation and 1-click **"Fill Admin"** and **"Fill Staff"** test credential helpers for rapid persona testing.
+
+![Sign In Page](docs/screenshots/login.png)
+
+### 2. Admin Analytics Dashboard
+Real-time overview of business health with 4 core KPI cards (Total Products, Low-Stock items below 10 units, Lifetime Orders, Pending Orders awaiting fulfillment), automated low-stock warnings, and recent order history.
+
+![Admin Dashboard](docs/screenshots/dashboard.png)
+
+### 3. Customer Orders Tracking
+Comprehensive order fulfillment list displaying order IDs, customer names, purchased line items, calculated order totals, color-coded status badges, and search strictly by customer name.
+
+![Orders Management](docs/screenshots/orders.png)
+
+### 4. Staff Order Creation Flow
+Step-by-step order creation workflow allowing staff to input customer details, select active catalog products, inspect real-time available stock, specify quantities within stock limits, and review live order calculations.
+
+![Create Customer Order](docs/screenshots/order-create.png)
 
 ---
 
@@ -37,6 +62,7 @@ StockFlow
 │   └── validators/         # Express-validator schemas
 │
 └── docs/                   # Full Architecture, Model, & API Reference Guides
+    ├── screenshots/        # Application UI showcase captures
     ├── DATABASE_MODELS.md  # Entity schemas, ER diagram, indexes, business rules
     └── API_DOCUMENTATION.md# Full REST API reference with payload schemas & examples
 ```
