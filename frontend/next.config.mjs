@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
+if (process.env.NODE_ENV !== 'production' && (process.env.VERCEL || process.env.CI)) {
+  process.env.NODE_ENV = 'production';
+}
+
 const nextConfig = {
   reactStrictMode: true,
   // Only rewrite /api in development mode if a local backend server is running
