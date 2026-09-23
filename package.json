@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Full-stack Inventory and Order Management System",
   "scripts": {
+    "build": "npm --prefix frontend run build",
+    "start": "npm --prefix frontend start",
     "dev": "concurrently -n \"BACKEND,FRONTEND\" -c \"blue,magenta\" \"npm run dev:backend\" \"npm run dev:frontend\"",
     "dev:backend": "npm --prefix backend run dev",
     "dev:frontend": "npm --prefix frontend run dev",
